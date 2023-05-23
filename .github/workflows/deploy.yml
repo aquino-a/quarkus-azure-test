@@ -24,6 +24,10 @@ jobs:
                   java-version: "17"
                   distribution: "temurin"
                   cache: maven
+            - name: Resolve Dependencies
+              working-directory: ./functions-quarkus
+              run: |
+                  mvn dependency:resolve
             - name: Deploy with Maven
               working-directory: ./functions-quarkus
               run: |
