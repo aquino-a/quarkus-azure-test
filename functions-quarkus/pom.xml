@@ -41,10 +41,6 @@
   <dependencies>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-funqy-http</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
       <artifactId>quarkus-azure-functions-http</artifactId>
     </dependency>
     <dependency>
@@ -56,6 +52,10 @@
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -116,8 +116,7 @@
         <version>${azure.functions.maven.plugin.version}</version>
         <configuration>
           <auth>
-            <type>device_code</type>
-            <tenant>${tenantId}</tenant>
+            <type>azure_cli</type>
           </auth>
           <hostJson>${stagingDirectory}/host.json</hostJson>
           <localSettingsJson>${stagingDirectory}/local.settings.json</localSettingsJson>
@@ -126,7 +125,7 @@
           <resourceGroup>${resourceGroup}</resourceGroup>
           <subscriptionId>${functionSubscriptionId}</subscriptionId>
           <runtime>
-            <os>windows</os>
+            <os>Linux</os>
             <javaVersion>17</javaVersion>
           </runtime>
           <appSettings>

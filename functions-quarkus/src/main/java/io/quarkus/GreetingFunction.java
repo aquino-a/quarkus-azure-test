@@ -1,11 +1,11 @@
 package io.quarkus;
 
-import io.quarkus.funqy.Funq;
+import javax.enterprise.context.ApplicationScoped;
 
+@ApplicationScoped
 public class GreetingFunction {
 
-    @Funq
-    public String funqyHello() {
-        return "hello funqy";
+    public String message(String message) {
+        return message;
     }
 }
