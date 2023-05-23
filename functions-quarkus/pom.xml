@@ -116,7 +116,11 @@
         <version>${azure.functions.maven.plugin.version}</version>
         <configuration>
           <auth>
-            <type>azure_cli</type>
+              <type>service_principal</type>
+              <client>${client}</client>
+              <tenant>${tenantId}</tenant>
+              <key>${key}</key>
+              <environment>azure</environment>
           </auth>
           <hostJson>${stagingDirectory}/host.json</hostJson>
           <localSettingsJson>${stagingDirectory}/local.settings.json</localSettingsJson>
