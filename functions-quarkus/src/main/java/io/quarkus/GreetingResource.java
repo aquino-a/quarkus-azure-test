@@ -26,6 +26,6 @@ public class GreetingResource {
     @Path("/{message}")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello(@PathParam("message") String message) {
-        return this.greeter.message(message);
+        return this.greeter.message(message + " :)");
     }
 }
