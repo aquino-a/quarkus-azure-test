@@ -138,6 +138,9 @@
               <value>~4</value>
             </property>
           </appSettings>
+          <deploymentSlot>
+              <name>${slot}</name>
+          </deploymentSlot>
         </configuration>
       </plugin>
       <plugin>

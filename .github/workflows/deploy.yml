@@ -36,4 +36,5 @@ jobs:
                     -DresourceGroup=${{ secrets.RG }}                 \
                     -Dclient=${{ secrets.CLIENT }}                    \
                     -Dkey=${{ secrets.KEY }}                          \
-                    -DtenantId=${{ secrets.TENANT }}
+                    -DtenantId=${{ secrets.TENANT }}                  \
+                    -Dslot=${{ secrets.SLOT }}
